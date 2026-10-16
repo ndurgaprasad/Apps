@@ -1,0 +1,31 @@
+# Odin Metadata
+
+## Topology
+
+Google Docs in Microsoft Edge (LOOKUP)
+to Visual Studio Code (LOOKUP)
+to Microsoft Edge (LOOKUP)
+to Visual Studio Code (LOOKUP)
+to Microsoft Edge (LOOKUP)
+
+## Request
+
+Analyze and validate an existing LLM API resilience implementation that protects an application from slow and temporarily failing AI-provider requests.
+
+The application simulates common downstream failure conditions including slow responses, transient HTTP errors, rate limiting, and non-retryable client errors. The existing resilience layer applies configurable request timeouts, bounded retry policies, failure classification, exponential backoff, and jitter.
+
+During the analysis, controlled provider scenarios will be executed to observe how each mechanism affects request attempts, latency, retry timing, and final outcomes. Request traces and browser-visible metrics will be used to explain why immediate retries can amplify failures, why retries should be limited to appropriate transient conditions, how exponential backoff reduces retry pressure, and how jitter helps prevent synchronized retry traffic across multiple clients.
+
+The final result will be an evidence-based technical evaluation of the resilience strategy, including the trade-offs involved in selecting timeout values, retry limits, and backoff behavior for LLM integrations.
+
+## Task Description
+
+1. Review the existing application architecture and identify where resilience logic is applied between the application and simulated LLM provider.
+2. Execute a normal provider request to establish baseline request behavior and latency.
+3. Test a slow-provider scenario and analyze how the configured timeout limits downstream waiting time.
+4. Execute transient HTTP failures and inspect how retry classification and bounded retry behavior handle temporary provider problems.
+5. Compare immediate retry behavior with exponential backoff and analyze the resulting retry timing.
+6. Run concurrent requests with jitter enabled and inspect how retry delays are distributed across clients.
+7. Test a non-retryable client error and confirm that unnecessary retries are prevented.
+8. Review request traces and runtime metrics to evaluate the reliability and latency trade-offs of the configured resilience strategy.
+9. Summarize the findings and verify that the demonstrated behavior matches the intended design.

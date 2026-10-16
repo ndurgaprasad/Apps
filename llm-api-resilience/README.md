@@ -55,9 +55,9 @@ docs/task.md                      Odin Dashboard fields and exact Goal
 docs/task-description.md          concise opening brief
 docs/recording-transcript.md      presenter reference guide
 docs/validation-results.md        observed validation evidence
-Metadata.rtf                      Odin metadata
+Metadata.md                      Odin metadata
 ```
 
 ## Odin materials
 
-See `docs/task.md`, `docs/task-description.md`, `docs/recording-transcript.md`, `docs/validation-results.md`, and `Metadata.rtf`. Update `Metadata.rtf` after recording if the actual application-switch sequence differs from the planned topology.
+See `docs/task.md`, `docs/task-description.md`, `docs/recording-transcript.md`, `docs/validation-results.md`, and `Metadata.md`. Update `Metadata.md` after recording if the actual application-switch sequence differs from the planned topology.

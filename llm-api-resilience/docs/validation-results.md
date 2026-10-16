@@ -28,4 +28,4 @@ Validation was performed on 2026-10-16 against the local app started with `npm s
 - A first integration run uncovered incorrect handling of the provider HTTP status and response body. `server/resilience.js` was corrected to read `response.status` and the top-level JSON response fields. All scenario checks above were run after that correction.
 - `AbortController` aborts the resilience layer's provider fetch. The mock provider does not consume a propagated cancellation signal, so its simulated delay can continue after the caller stops waiting.
 - Immediate retry is explained conceptually; the UI does not implement a separate immediate-retry mode.
-- Update `Metadata.rtf` after recording if the actual application-switch sequence differs from the planned topology.
+- Update `Metadata.md` after recording if the actual application-switch sequence differs from the planned topology.
