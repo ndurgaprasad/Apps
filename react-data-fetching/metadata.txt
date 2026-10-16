@@ -1,0 +1,17 @@
+Topology
+Google Docs in Microsoft Edge (LOOKUP) → Microsoft Edge (LOOKUP) → Visual Studio Code (LOOKUP) → Microsoft Edge (LOOKUP) → Visual Studio Code (LOOKUP) → Microsoft Edge (LOOKUP)
+
+Request
+Present and explain the completed React Customer Support Ticket Dashboard comparing Manual Hooks with TanStack Query. Show the approved task goal briefly in Google Docs, then show the application before introducing the project setup. Explain the prepared implementations and verify their behavior in the browser. Do not implement or modify application features during the walkthrough.
+
+Task Description
+1. Show the approved task goal in Google Docs using Microsoft Edge for about one minute, then move directly to the completed application.
+2. Show the dashboard summary and ticket list, then switch between the Manual Hooks and TanStack Query views.
+3. Introduce the prepared project and technology stack in Visual Studio Code. Show the project structure and completed dependency and build checks.
+4. Explain how the local ticket API and shared request function provide the same ticket data, response delay, HTTP handling, and controlled failure behavior.
+5. Explain the Manual Hooks implementation, including data, loading, and error state, initial fetching, refresh behavior, cleanup, and the two independent dashboard consumers.
+6. Use Microsoft Edge Developer Tools to inspect actual Network activity for Manual Hooks, including initial requests, refresh, and behavior after switching away and returning. Describe the observed requests without assuming a count.
+7. Explain the TanStack Query client and provider, query key, freshness setting, refetch behavior, and loading and fetching indicators. Show how the dashboard consumers use the shared query.
+8. Use Microsoft Edge Developer Tools to inspect TanStack Query Network activity, test refresh, and switch away and back within the freshness window to check whether cached data is reused.
+9. Enable Failure Mode and verify the HTTP 500 response and visible error state in both views. Disable Failure Mode and confirm successful recovery in both views.
+10. Inspect the browser Console for unexpected runtime errors, summarize the observed differences, and conclude with the completed application deliverable.
