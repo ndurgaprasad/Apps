@@ -13,7 +13,7 @@ The app header says “LLM API Resilience Lab” and “Prepared implementation 
 **VERIFICATION**  
 Keep `docs/task-description.md` visible in Google Docs in Microsoft Edge. The wording says analyze and validate an existing implementation, not implement one during the session.
 
-## 2. Architecture — approximately 2–3 minutes
+## 2. Architecture — approximately 2–2.5 minutes
 
 **ACTION**  
 Switch to Visual Studio Code. Open `src/App.jsx`, `src/api/resilienceApi.js`, `server/server.js`, `server/resilience.js`, and `server/mockProvider.js` in that order.
@@ -34,7 +34,7 @@ Separating UI, policy, and provider simulation makes the decision points reviewa
 **VERIFICATION**  
 Confirm the UI uses `/api/requests`, Express listens on port 3001, and Vite proxies `/api` to that server. No API key or external provider SDK is configured.
 
-## 3. Normal baseline — approximately 2–3 minutes
+## 3. Normal baseline — approximately 2 minutes
 
 **ACTION**  
 In Microsoft Edge select “Normal response,” leave the defaults, and click **Send request**.
@@ -70,7 +70,7 @@ Select “Slow provider.” Keep timeout at 2,000 ms and two retries. Click **Se
 In `server/resilience.js`, point to `providerAttempt`: the `AbortController`, timeout `setTimeout`, `fetch(..., { signal })`, and `finally` cleanup. Point out the `TIMEOUT` error classification and retry path in `runResilientRequest`. In `server/mockProvider.js`, show the 4,000 ms wait.
 
 **WHAT TO LOOK FOR**  
-Read each “timeout budget 2000 ms,” timeout event, retry wait, and final attempt limit from the trace. The metric’s duration includes all timed-out attempts plus waits. Runtime timings may differ slightly due to scheduling.
+Read “Mock provider modeled latency: 4000 ms” beside “client timeout budget: 2000 ms per attempt,” then read each timeout event, retry wait, and final attempt limit. The metric’s duration includes all timed-out attempts plus waits. Runtime timings may differ slightly due to scheduling.
 
 **WHY IT MATTERS**  
 The timeout limits caller-side waiting on an individual downstream attempt. It does not necessarily cap the entire logical operation at the same value: bounded retries and backoff can make total duration much longer. A production design may also need an overall deadline; this demo intentionally focuses on per-attempt timeout plus bounded retries.
@@ -202,7 +202,7 @@ Confirm five completed rows, three attempts each, successful outcomes, and runti
 **VERIFICATION**  
 Tie each trade-off to a visible control or result: timeout slider, retries, base backoff, jitter toggle, request duration, and attempt count.
 
-## 12. Final conclusion — approximately 2 minutes
+## 12. Final conclusion — approximately 1.5 minutes
 
 **WHAT TO SAY**  
 “This implementation demonstrates how a client can protect an LLM integration from slow and temporarily failing downstream calls. A timeout limits how long the caller waits on each attempt. Failure classification prevents deterministic client errors such as HTTP 400 from triggering pointless repeats. Bounded retries allow limited recovery opportunities without retrying forever. Exponential backoff increases the time between retries, while full jitter spreads retry timing among clients that would otherwise follow identical schedules.”
