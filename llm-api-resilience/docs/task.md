@@ -25,7 +25,6 @@ Before recording, the completed project already contains a React application, a 
 - Google Docs in Microsoft Edge: display the approved task goal and task description at the beginning.
 - Visual Studio Code: inspect and explain the prepared implementation.
 - Microsoft Edge: run the application, execute failure experiments, inspect results, and validate behavior.
-- Node.js: local runtime for the application and simulated provider.
 
 ## What Will You Actually Create / Analyze / Decide?
 
